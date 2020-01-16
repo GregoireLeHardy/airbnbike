@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'bikes/index'
+  get 'bikes/show'
+  get 'bikes/new'
+  get 'bikes/create'
+  get 'bikes/edit'
+  get 'bikes/update'
+  get 'bikes/destroy'
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show, :new, :create] do
