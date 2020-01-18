@@ -9,5 +9,5 @@ class Bike < ApplicationRecord
 
   validates :status, presence: true
   validates :user_id, presence: true
-  validates :address_id, presence: true
+  validates :address, presence: true
 end
