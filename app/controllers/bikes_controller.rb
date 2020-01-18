@@ -1,8 +1,16 @@
 class BikesController < ApplicationController
-  before_action :find_bike, only:[:show, :edit, :destroy]
+  before_action :find_bike, only:[:create, :show, :edit, :destroy]
 
   def index
-    @bikes = Bike.all
+    @bikes = Bike.geocoded #returns flats with coordinates
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+      }
+    end
   end
 
   def show
