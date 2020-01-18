@@ -1,0 +1,23 @@
+<h1 class="text-center">My bookings</h1>
+
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+     <p><%= booking.bike.name %></p>
+     <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+      <%= link_to "Edit", edit_bike_booking_path(@bike, booking), class: "btn btn-primary" %>
+      <%= link_to "Cancel it", bike_booking_path(@bike, booking), method: :delete, class: "btn btn-primary" %>
+       </div>
+    <% end %>
+
+ </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 padded">
+<%= link_to "New booking", new_bike_booking_path(@bike), class: "btn btn-success"  %>
+</div>
+ </div>
+</div>
