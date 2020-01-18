@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_actions :find_bike, only:[:create, :show, :edit, :destroy]
+  before_action :find_bike, only:[:show, :edit, :destroy]
 
   def index
     @bikes = Bike.all
@@ -9,10 +9,12 @@ class BikesController < ApplicationController
   end
 
   def new
-    @bike = Bike.new(params[:id])
+    @bike = Bike.new
+    create
   end
 
   def create
+    @bike = Bike.new(params[:id])
     @bike.save
   end
 
