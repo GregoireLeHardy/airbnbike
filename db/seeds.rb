@@ -56,4 +56,3 @@ booking_2 = Booking.create!(
 )
 
 puts '2 missions successfully create!d'
->>>>>>> master
