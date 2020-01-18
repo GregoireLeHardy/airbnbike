@@ -7,7 +7,7 @@ class Bike < ApplicationRecord
   has_many :users, through: :bookings
   # has_attachment :photo
 
-  validates :status, presence: true
+  # validates :status, presence: true
   validates :user_id, presence: true
   validates :address, presence: true
 end

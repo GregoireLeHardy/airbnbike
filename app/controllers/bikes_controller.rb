@@ -10,12 +10,15 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
-    create
   end
 
   def create
-    @bike = Bike.new(params[:id])
-    @bike.save
+    @bike = Bike.new(bike_params_user)
+    if @bike.save!
+      redirect_to bikes_path
+    else
+
+    end
   end
 
   def edit
@@ -30,6 +33,15 @@ class BikesController < ApplicationController
   end
 
   private
+
+  def bike_params_user
+    bike_params.merge(user_id: current_user.id)
+  end
+
+
+  def bike_params
+    params.require(:bike).permit(:name, :address)
+  end
 
   def find_bike
     @bike = Bike.find(params[:id])
