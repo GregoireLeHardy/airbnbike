@@ -1,13 +1,18 @@
-<h1>Bikes#index</h1>
-<p>Find me in app/views/bikes/index.html.erb</p>
-<h2><% @bikes.each do |bike| %></h2>
-  <p><%= bike.name %></p>
-<% end %>
+<div class="container">
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px; padding-top: 50px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+  <div class="page-header">
+    <h1>Check Our Bikes <small>Find your dream bikky !</small></h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @bikes.each do |bike| %>
+
+        <%= render 'card', bike: bike %>
+      <% end %>
+    <div class ="map-container" id="map" style=" height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    </div>
+</div>
+
