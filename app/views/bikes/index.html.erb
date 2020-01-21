@@ -2,6 +2,7 @@
 <p>Find me in app/views/bikes/index.html.erb</p>
 <h2><% @bikes.each do |bike| %></h2>
   <p><%= bike.name %></p>
+  <p><%= link_to "Edit", edit_bike_path(bike) %></p>
 <% end %>
 
 <div
