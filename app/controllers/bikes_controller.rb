@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :find_bike, only:[:show, :edit, :destroy]
+  before_action :find_bike, only:[:show, :edit, :update, :destroy]
 
   def index
     @bikes = Bike.geocoded #returns flats with coordinates
@@ -33,7 +33,8 @@ class BikesController < ApplicationController
   end
 
   def update
-    @bike.update(params[:id])
+    @bike.update(bike_params)
+    redirect_to bikes_path
   end
 
   def destroy
