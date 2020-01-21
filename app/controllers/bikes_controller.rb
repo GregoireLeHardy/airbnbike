@@ -46,7 +46,6 @@ class BikesController < ApplicationController
     bike_params.merge(user_id: current_user.id)
   end
 
-
   def bike_params
     params.require(:bike).permit(:name, :address)
   end
