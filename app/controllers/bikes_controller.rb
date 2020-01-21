@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :find_bike, only:[:show, :edit, :destroy]
+  before_action :find_bike, only:[:show, :edit, :update, :destroy]
 
   def index
     @bikes = Bike.geocoded #returns flats with coordinates
@@ -33,11 +33,13 @@ class BikesController < ApplicationController
   end
 
   def update
-    @bike.update(params[:id])
+    @bike.update(bike_params)
+    redirect_to bikes_path
   end
 
   def destroy
     @bike.destroy
+    redirect_to bikes_path
   end
 
   private
@@ -45,7 +47,6 @@ class BikesController < ApplicationController
   def bike_params_user
     bike_params.merge(user_id: current_user.id)
   end
-
 
   def bike_params
     params.require(:bike).permit(:name, :address)
