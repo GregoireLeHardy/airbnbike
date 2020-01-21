@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Summary of the Booking</h1>
+      <p><%= @booking.bike.name %></p>
+      <p><%= @booking.start_date %></p>
+      <p><%= @booking.end_date %></p>
+
+      <div class="form-group">
+       <label>Daily Price : <%= @booking.price_per_day %> <i class="fa fa-eur" aria-hidden="true"></i>
+       </label>
+
+     </div>
+
+
+     <%= link_to "Back to all your bookings", bike_bookings_path(@booking) %>
+   </div>
+ </div>
+</div>
