@@ -1,3 +1,20 @@
+<div class="container">
+
+  <div class="page-header">
+    <h1>Check Our Bikes <small>Find your dream bikky !</small></h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @bikes.each do |bike| %>
+
+        <%= render 'card', bike: bike %>
+      <% end %>
+    <div class ="map-container" id="map" style=" height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    </div>
+</div>
 
 <h1>Our beautiful Bikes</h1>
 
