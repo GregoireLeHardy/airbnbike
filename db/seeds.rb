@@ -23,7 +23,7 @@ bike_1 = Bike.create!(
 )
 
 bike_2 = Bike.create!(
-  status: 'pending',
+  status: 'available',
   name: 'Treck',
   user: user,
   address: 'Avenue des grands prix, 9, Bruxelles 1000'
