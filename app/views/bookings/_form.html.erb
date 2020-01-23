@@ -1,4 +1,4 @@
-<%= form_for @booking do |f| %>
+<%= simple_form_for [@bike, @booking] do |f| %>
   <%= f.label :num_days, "Enter the length of rental" %>
   <%= f.text_field :num_days %>
   <%= f.submit %>

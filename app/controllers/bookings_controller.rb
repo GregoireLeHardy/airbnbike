@@ -4,18 +4,22 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @bookings = Booking.find(params[:id])
-    @rating = Rating.new
+    @booking = Booking.find(params[:id])
   end
 
   def new
+    @bike = Bike.find(params[:bike_id])
     @booking = Booking.new
   end
 
   def create
+    @bike = Bike.find(params[:bike_id])
     @booking = Booking.new(booking_params)
-    if @booking.save
-      redirect_to booking_path(@booking)
+    @booking.bike = @bike
+    @booking.user = current_user
+
+    if @booking.save!
+      redirect_to bike_booking_path(@bike, @booking)
     else
       render 'new'
     end
