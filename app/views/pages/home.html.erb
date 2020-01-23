@@ -4,16 +4,17 @@
     <p>Find the nearest bike in your city </p>
 
   <div class="search-bar">
-    <form action="/beds" class="form-inline padded">
+    <form action="/bikes" class="form-inline padded">
       <input type="text" class="form-control border-radius input-lg" placeholder="Paris">
       <input type="text" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
       <input type="text" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
-      <select name="" id="" class="form-control border-radius input-lg">
+<!--       <select name="" id="" class="form-control border-radius input-lg">
         <option value="1">Electric</option>
         <option value="2">VTT</option>
         <option value="3">Regular</option>
-      </select>
+      </select> -->
       <input type="submit" class="btn btn-danger btn-lg" value="Search">
+      <%= link_to "", bikes_path %>
     </form>
   </div>
   </div>

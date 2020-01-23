@@ -12,3 +12,8 @@
   margin-right: 0px;
   width: 30%;
 }
+
+.map-container .mapboxgl-map {
+  position: absolute;
+  position: fixed;
+}

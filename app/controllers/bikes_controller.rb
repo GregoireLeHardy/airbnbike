@@ -3,6 +3,7 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.geocoded #returns flats with coordinates
+    @bikes = @bikes + @bikes + @bikes + @bikes + @bikes + @bikes +@bikes + @bikes + @bikes +@bikes + @bikes + @bikes +@bikes + @bikes + @bikes +@bikes + @bikes + @bikes +@bikes + @bikes + @bikes
 
     @markers = @bikes.map do |bike|
       {
