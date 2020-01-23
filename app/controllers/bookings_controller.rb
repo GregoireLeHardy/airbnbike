@@ -20,9 +20,11 @@ class BookingsController < ApplicationController
 
     if @booking.save!
       redirect_to bike_booking_path(@bike, @booking)
+      @bike.booked!
     else
       render 'new'
     end
+    # @bikes = Bike.where(status: 'available')
   end
 
   def edit
