@@ -19,21 +19,24 @@ bike_1 = Bike.create!(
   status: 'booked',
   name: 'Grandville',
   user: user,
-  address: 'Avenue des grands prix, 2, Bruxelles 1200'
+  address: 'Avenue des grands prix, 2, Bruxelles 1200',
+  price: 100
 )
 
 bike_2 = Bike.create!(
   status: 'available',
   name: 'Treck',
   user: user,
-  address: 'Avenue des grands prix, 9, Bruxelles 1000'
+  address: 'Avenue des grands prix, 9, Bruxelles 1000',
+  price: 89
 )
 
 bike_3 = Bike.create!(
   status: 'available',
   name: 'Lapierre',
   user: user,
-  address: 'Avenue de la bonne reine, 19, Bruxelles 1200'
+  address: 'Avenue de la bonne reine, 19, Bruxelles 1200',
+  price: 20
 )
 
 puts '3 bikes successfully create!d'
