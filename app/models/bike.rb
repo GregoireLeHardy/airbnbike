@@ -6,7 +6,6 @@ class Bike < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
   has_many :bookings
-  has_many :users, through: :bookings
   # has_attachment :photo
 
   validates :status, presence: true, inclusion: { in: ALLOWED_STATUSES }
