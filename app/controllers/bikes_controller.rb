@@ -3,17 +3,17 @@ class BikesController < ApplicationController
 
   def index
     if params[:query].present?
-      @bikes = Bike.where(address: params[:query])
-    @bikes = Bike.geocoded #returns flats with coordinates
-    @bikes = @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes
+      @bikes = Bike.where("address ILIKE ?", "%#{params[:query]}%")
+      @bikes = Bike.geocoded
+      @bikes = @bikes
 
-    @markers = @bikes.map do |bike|
-      {
-        lat: bike.latitude,
-        lng: bike.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
-      }
-    end
+      @markers = @bikes.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+        }
+      end
     else
       @bikes = Bike.all
     end
