@@ -3,7 +3,7 @@ class CreateBikes < ActiveRecord::Migration[5.2]
     create_table :bikes do |t|
       t.integer :user_id
       t.string :address_id
-      t.string :status
+      t.string :status, default: 'available'
 
       t.timestamps
     end

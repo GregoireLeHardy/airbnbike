@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_01_21_193720) do
   enable_extension "plpgsql"
 
   create_table "bikes", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2020_01_21_193720) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "start_date"
-    t.integer "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.integer "price_per_day"
     t.integer "num_days"
     t.datetime "created_at", null: false
