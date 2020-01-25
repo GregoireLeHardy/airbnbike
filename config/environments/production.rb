@@ -85,6 +85,8 @@ Rails.application.configure do
 
   config.assets.js_compressor = Uglifier.new(harmony: true)
 
+  config.assets.js_compressor = Uglifier.new(harmony: true)
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
