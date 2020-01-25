@@ -3,7 +3,7 @@ class Bike < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-
+  has_one_attached :photo
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
@@ -12,6 +12,8 @@ class Bike < ApplicationRecord
   validates :status, presence: true, inclusion: { in: ALLOWED_STATUSES }
   validates :user_id, presence: true
   validates :address, presence: true
+  validates :photo, presence: true
+
 
   def available!
     self.update!(status: 'available')

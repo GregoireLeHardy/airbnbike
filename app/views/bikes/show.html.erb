@@ -3,4 +3,8 @@
 
 <%= render "form" %>
 
+<%= cl_image_tag @bike.photo.key, width: 400, height: 300, crop: :fill %>
+
+<!-- for face detection -->
+
 <% link_to 'Edit', edit_bike_path(@bike) %>
