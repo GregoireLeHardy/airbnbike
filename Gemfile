@@ -18,7 +18,6 @@ gem 'webpacker'
 gem 'devise'
 gem "omniauth"
 
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 
 group :development do

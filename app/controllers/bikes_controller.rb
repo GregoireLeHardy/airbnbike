@@ -5,7 +5,6 @@ class BikesController < ApplicationController
     if params[:query].present?
       @bikes = Bike.where("address ILIKE ?", "%#{params[:query]}%")
       @bikes = Bike.geocoded
-      @bikes = @bikes
 
       @markers = @bikes.map do |bike|
         {
