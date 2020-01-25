@@ -6,7 +6,7 @@ class User < ApplicationRecord
          # :confirmable, :lockable, :timeoutable, :trackable, :omniauthable
 
   has_many :bookings
-  has_many :bikes, through: :bookings
+  has_many :bikes
   # has_attachment :photo
   validates :email, uniqueness: true, presence: true
 
