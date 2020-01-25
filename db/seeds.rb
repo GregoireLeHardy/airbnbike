@@ -35,7 +35,7 @@ bike_3 = Bike.create!(
   status: 'available',
   name: 'Lapierre',
   user: user,
-  address: 'Avenue de la bonne reine, 19, Bruxelles 1200',
+  address: 'Avenue des grands prix, 16, Bruxelles 1000',
   price: 20
 )
 
