@@ -1,25 +1,27 @@
 // Specific CSS for your home-page
 .banner {
   background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
 .banner h1 {
-  padding: 15px;
+  padding: 35px;
   font-family: Open Sans;
   font-weight: bold;
   color: white;
 }
 
 .banner p {
-  padding-left: 15px;
+  padding-left: 35px;
   font-family: Open Sans;
   font-weight: bold;
   color: white;
 }
 
 .search-bar {
-  padding-left: 15px;
+  padding-left: 35px;
 }
 
 .btn-danger {
