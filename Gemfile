@@ -17,7 +17,6 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem "omniauth"
-
 gem 'cloudinary', '~> 1.12.0'
 
 group :development do
