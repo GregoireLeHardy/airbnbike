@@ -39,7 +39,15 @@ bike_3 = Bike.create!(
   price: 20
 )
 
-puts '3 bikes successfully create!d'
+bike_4 = Bike.create!(
+  status: 'available',
+  name: 'SisiLaFamille',
+  user: user,
+  address: '79 Av. des Champs-Élysées, 75008 Paris, France',
+  price: 20
+)
+
+puts '4 bikes successfully create!d'
 
 ###### MISSIONS ######
 booking_1 = Booking.create!(

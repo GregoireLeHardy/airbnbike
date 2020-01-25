@@ -2,15 +2,20 @@ class BikesController < ApplicationController
   before_action :find_bike, only:[:show, :edit, :update, :destroy, :book_bike]
 
   def index
-    @bikes = Bike.geocoded #returns flats with coordinates
-    @bikes = @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes + @bikes
+    if params[:query].present?
+      @bikes = Bike.where("address ILIKE ?", "%#{params[:query]}%")
+      @bikes = Bike.geocoded
+      @bikes = @bikes
 
-    @markers = @bikes.map do |bike|
-      {
-        lat: bike.latitude,
-        lng: bike.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
-      }
+      @markers = @bikes.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+        }
+      end
+    else
+      @bikes = Bike.all
     end
   end
 

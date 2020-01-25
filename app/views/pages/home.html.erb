@@ -5,16 +5,24 @@
 
   <div class="search-bar">
     <form action="/bikes" class="form-inline padded">
+      <%= form_tag bikes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a bike"
+        %>
+        <%= submit_tag "Search", class: "btn btn-danger btn-lg" %>
+      <% end %>
+<!--  <input type="text" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
       <input type="text" class="form-control border-radius input-lg" placeholder="Paris">
-      <input type="text" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
-      <input type="text" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
+      <input type="text" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout"> -->
 <!--       <select name="" id="" class="form-control border-radius input-lg">
         <option value="1">Electric</option>
         <option value="2">VTT</option>
         <option value="3">Regular</option>
       </select> -->
-      <input type="submit" class="btn btn-danger btn-lg" value="Search">
-      <%= link_to "", bikes_path %>
+<!--      <input type="submit" class="btn btn-danger btn-lg" value="Search">
+      <%= link_to "", bikes_path %> -->
     </form>
   </div>
   </div>
